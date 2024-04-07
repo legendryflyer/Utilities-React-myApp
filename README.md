@@ -1,4 +1,4 @@
-Creating my first React application via project based learning, referring <a href="https://react.dev/learn"></a> and YouTube for tutorials and concepts.
+Creating my first React application via project based learning, referring <a href="https://react.dev/learn">react.dev</a> and YouTube for tutorials and concepts.
 
 
 
