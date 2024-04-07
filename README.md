@@ -1,3 +1,7 @@
+Creating my first React application via project based learning, referring <a href="https://react.dev/learn"> </a> and YouTube for tutorials and concepts.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
