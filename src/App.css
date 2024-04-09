@@ -39,5 +39,6 @@
 .bg-secondary-subtle {
   --tw-bg-opacity: 0.5;
   background-color: rgba(78, 92, 110, var(--tw-bg-opacity));
+  
 }
 
