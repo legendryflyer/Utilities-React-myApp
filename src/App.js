@@ -7,7 +7,7 @@ import Textform from './Camponants/Textform';
 function App() {
   return (
     <>
-      <Navbar title="Utilities" aboutLinkText="About" />
+      <Navbar title="textUtilities" aboutLinkText="About" />
       <div className="container my-5">
         <Textform heading="Enter the  text you want to analyze"/>
         
