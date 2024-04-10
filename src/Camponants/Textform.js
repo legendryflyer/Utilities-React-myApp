@@ -16,34 +16,81 @@ export default function Textform(props) {
         console.log("lower onClick")
         setText(text.toLowerCase())
     }
+    const sentanceCase = () => {
+        console.log("Sentance case")
+        setText(text.charAt(0).toUpperCase() + text.slice(1).toLowerCase())
+    }
+
+
+
+    const capitalizeCase = () => {
+        console.log("Capitalize Case")
+        let newText = text.split(' ')
+        newText = newText.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        setText(newText.join(' '))
+
+    }
+
+
+    const alternateCase = () => {
+        let alterCase = ''
+        for (let i = 0; i < text.length; i++) {
+            if (i % 2 === 0) {
+                alterCase += text.charAt(i).toUpperCase()
+            } else {
+                alterCase += text.charAt(i).toLowerCase()
+            }
+        }
+        setText(alterCase)
+    }
+    const copyToClipBoard = () => {
+        const tempTextarea = document.createElement('textarea')
+        tempTextarea.value = text
+        document.body.appendChild(tempTextarea)
+        tempTextarea.select()
+        document.execCommand('copy')
+        document.body.removeChild(tempTextarea)
+        
+    }
+
+
+
+    const clearText = () => {
+        console.log("clear")
+        setText("")
+    }
 
     return (
         <>
-        <div>
+            <div>
 
-            <h1>{props.heading}</h1>
-            <div className="mb-3">
-                <textarea className="form-control" value={text} onChange={handleOnChange} id="TextBox" rows="5"></textarea>
+                <h1>{props.heading}</h1>
+                <div className="mb-3">
+                    <textarea className="form-control" value={text} onChange={handleOnChange} id="TextBox" rows="5"></textarea>
+                </div>
+                <div className="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button type='button' className="btn btn-success" onClick={handleUpperOnClick}>Convert to Uppercase</button>
+                    <button type='button' className="btn btn-success" onClick={handleLowerOnClick}>Convert to Lowercase</button>
+                    <button type='button' className="btn btn-success" onClick={sentanceCase}>Sentance Case</button>
+                    <button type='button' className="btn btn-success" onClick={capitalizeCase}>Capitalize Case</button>
+                    <button type='button' className="btn btn-success" onClick={alternateCase}>aLtErNaTiNg CaSe</button>
+                    <button type='button' className="btn btn-success" onClick={copyToClipBoard}>Copy to Clipboard</button>
+                    <button type='button' className="btn btn-success" onClick={clearText}>Clear</button>
+                </div>
             </div>
-            <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-                <button type='button' className="btn btn-success" onClick={handleUpperOnClick}>Convert to Uppercase</button>
-                <button type='button' className="btn btn-success" onClick={handleLowerOnClick}>Convert to Lowercase</button>
-            </div>
-        </div>
-        <div>
-            <h2 className="container my-3">Text Summary</h2>
-            <p className="container my-4">
-                {text.split(' ').length} words and {text.length} characters.
-            </p>           
-            <p className="container my-4">
-                You will require {0.008*text.split(' ').length} minutes to read this in real life.
-            </p>
-            <h3 className="container my-3">Original Text Preview:</h3>
-            <p className="container my-4">{text}</p>
-            
+            <div>
+                <h2 className="container my-3">Text Summary</h2>
+                <p className="container my-4">
+                    {text.split(' ').length} words and {text.length} characters.
+                </p>
+                <p className="container my-4">
+                    You will require {0.008 * text.split(' ').length} minutes to read this in real life.
+                </p>
+                <h3 className="container my-3">Original Text Preview:</h3>
+                <p className="container my-4">{text}</p>
 
-        </div>
+
+            </div>
         </>
     )
 }
-
