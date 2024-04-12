@@ -11,14 +11,17 @@ export default function Textform(props) {
     const handleUpperOnClick = () => {
         console.log("on Click")
         setText(text.toUpperCase())
+        props.showAlertMassage(" Converted to Uppercase!", "success")
     }
     const handleLowerOnClick = () => {
         console.log("lower onClick")
         setText(text.toLowerCase())
+        props.showAlertMassage(" Converted to Lowercase!", "success")
     }
     const sentanceCase = () => {
         console.log("Sentance case")
         setText(text.charAt(0).toUpperCase() + text.slice(1).toLowerCase())
+        props.showAlertMassage(" Converted to Sentance case!", "success")
     }
 
 
@@ -28,6 +31,7 @@ export default function Textform(props) {
         let newText = text.split(' ')
         newText = newText.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         setText(newText.join(' '))
+        props.showAlertMassage(" Converted to Capitalize Case!", "success")
 
     }
 
@@ -42,6 +46,7 @@ export default function Textform(props) {
             }
         }
         setText(alterCase)
+        props.showAlertMassage(" Converted to Alternate case!", "success")
     }
     const copyToClipBoard = () => {
         const tempTextarea = document.createElement('textarea')
@@ -50,12 +55,14 @@ export default function Textform(props) {
         tempTextarea.select()
         document.execCommand('copy')
         document.body.removeChild(tempTextarea)
+        props.showAlertMassage(" Copied to Clipboard ", "success")
         
     }
     const removeExtraSpaces = () => {
         console.log("Remove extra spaces")
         let newText = text.split(/[ ]+/)
         setText(newText.join(' '))
+        props.showAlertMassage(" Extra spaces are removed successfully.", "success")
     }
 
 
@@ -63,6 +70,7 @@ export default function Textform(props) {
     const clearText = () => {
         console.log("clear")
         setText("")
+        props.showAlertMassage(" Text cleared","primary")
     }
 
     return (
