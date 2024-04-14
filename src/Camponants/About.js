@@ -1,8 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-export default function About() {
+
+export default function About(props) {
     return (
-        <div className='container'>
+        <div className ='container'>
             <h1 className='my-3'>About Us</h1>
             <div className="accordion" id="accordionExample">
                 <div className="accordion-item">
