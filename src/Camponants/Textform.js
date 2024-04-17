@@ -56,7 +56,7 @@ export default function Textform(props) {
         document.execCommand('copy')
         document.body.removeChild(tempTextarea)
         props.showAlertMassage(" Copied to Clipboard ", "success")
-        
+
     }
     const removeExtraSpaces = () => {
         console.log("Remove extra spaces")
@@ -70,16 +70,16 @@ export default function Textform(props) {
     const clearText = () => {
         console.log("clear")
         setText("")
-        props.showAlertMassage(" Text cleared","primary")
+        props.showAlertMassage(" Text cleared", "primary")
     }
 
     return (
         <>
-            <div className='container' style={{backgroundColor:props.mode==='light'?'white':'#1f1f1f', color:props.mode==='dark'?'white':'black'}}>
+            <div className='container' style={{ backgroundColor: props.mode === 'light' ? 'white' : '#1f1f1f', color: props.mode === 'dark' ? 'white' : 'black' }}>
 
                 <h1>{props.heading}</h1>
                 <div className="mb-3">
-                    <textarea className="form-control" value={text} style={{backgroundColor:props.mode==='dark'?'#212529':'white', color:props.mode==='dark'?'white':'black'}} onChange={handleOnChange}  id="TextBox" rows="5"></textarea>
+                    <textarea className="form-control" value={text} style={{ backgroundColor: props.mode === 'dark' ? '#212529' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }} onChange={handleOnChange} id="TextBox" rows="5"></textarea>
                 </div>
                 <div className="d-grid gap-2 d-md-flex justify-content-md-start">
                     <button type='button' className="btn btn-success" onClick={handleUpperOnClick}>Convert to Uppercase</button>
@@ -92,7 +92,7 @@ export default function Textform(props) {
                     <button type='button' className="btn btn-success" onClick={clearText}>Clear</button>
                 </div>
             </div>
-            <div className='container' style={{backgroundColor:props.mode==='light'?'white':'#1f1f1f', color:props.mode==='dark'?'white':'black'}}>
+            <div className='container' style={{ backgroundColor: props.mode === 'light' ? 'white' : '#1f1f1f', color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h2 className="container my-3">Text Summary</h2>
                 <p className="container my-4">
                     {text.split(' ').length} words and {text.length} characters.
@@ -101,7 +101,7 @@ export default function Textform(props) {
                     You will require {0.008 * text.split(' ').length} minutes to read this in real life.
                 </p>
                 <h3 className="container my-3">Original Text Preview:</h3>
-                <p className="container my-4">{text.length>0?text:"No text entered"}</p>
+                <p className="container my-4">{text.length > 0 ? text : "No text entered"}</p>
 
 
             </div>

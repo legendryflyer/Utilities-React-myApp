@@ -5,6 +5,7 @@ import Alert from './Camponants/Alert';
 import Navbar from './Camponants/Navbar';
 import Textform from './Camponants/Textform';
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom/client'
 
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
     <>
 
       <div>
-        <Navbar title="textUtilities" aboutLinkText="About" mode={mode} toggleSwitch={toggleSwitch} />
+        <Navbar title="textUtilities" aboutLinkText="About" mode={mode} toggleSwitch={toggleSwitch} ></Navbar>
         <Alert alertMassage={alertMassage} />
         <div className="container my-5" mode={mode}>
         </div>
@@ -55,4 +56,7 @@ function App() {
   );
 }
 
-export default App;
+// const root = ReactDOM.createRoot(document.getElementById('root'))
+// root.render(<App />)
+
+export default  App;
