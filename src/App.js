@@ -5,7 +5,7 @@ import Alert from './Camponants/Alert';
 import Navbar from './Camponants/Navbar';
 import Textform from './Camponants/Textform';
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom/client'
+// import ReactDOM from 'react-dom/client'
 
 
 function App() {
@@ -59,4 +59,4 @@ function App() {
 // const root = ReactDOM.createRoot(document.getElementById('root'))
 // root.render(<App />)
 
-export default  App;
+export default App;
