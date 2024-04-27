@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-// import About from './Camponants/About';
+import About from './Camponants/About';
 import Alert from './Camponants/Alert';
 import Navbar from './Camponants/Navbar';
 import Textform from './Camponants/Textform';
@@ -22,10 +22,6 @@ function App() {
       setalertMassage(false)
     }, 2000)
   }
-
-
-
-
 
   const toggleSwitch = () => {
     if (mode === "light") {
@@ -56,7 +52,6 @@ function App() {
   );
 }
 
-// const root = ReactDOM.createRoot(document.getElementById('root'))
-// root.render(<App />)
+
 
 export default App;
